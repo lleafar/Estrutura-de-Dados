@@ -1,0 +1,70 @@
+//Radix Sort
+Tempo de execução do algoritmo
+                
+Nanosegundos : 4532100888
+Segundos     : 4.532100888
+Total Valores: 50000000
+
+//Counting Sort
+Tempo de execução do algoritmo
+
+Nanosegundos : 9883095770
+Segundos     : 9.88309577
+Total Valores: 50000000
+
+
+
+Pseudocódigo Radix Sort
+
+recebe lista números
+recebe maior digito da lista
+
+inicio 
+
+    variáveis tamanho do maior numero, posicao, base : número
+    posição = 1
+
+    enquanto (tamanho do maior numero = ele proprio - 1) > 0 faça
+        
+        base                         = 10
+        tamanho                      = quantidade de itens na lista números
+        lista de frequência[]        = frequência com tamanho [base]  
+        lista de valores ordenados[] = lista com tamanho [tamanho]
+
+        --conta a frequencia de cada digito
+        
+        para i = 0 até o valor de "tamanho"
+            digito = resto de (posição "i" da lista "números" / "posição") dividido pela "base".
+
+            na posição "digito" da lista de "frequência" é acrescentado +1.
+        fim para.
+
+        --soma a frequencia de digitos com a quantidade de digitos anterior
+
+        para j = 1 até o valor de "base"
+            na posição "j" da lista de "frequência" é acrescentado o valor da posição anterior.
+        fim para.
+
+        -- posiciona os números de acordo
+        -- com o valor da frequencia do digito - 1
+        -- e diminui remove 1 ocorrencia do digito 
+        -- na lista de frequencia 
+
+        para k = "tamanho" -1 até a 0
+            digito = resto de (posição "k" da lista "números" / "posição") dividido pela "base".
+            
+            na posição (valor da posição de digito - 1 de "frequência") da lista de valores ordenados = valor na posição "k" da lista de números.
+
+            na posição "digito" na lista de "frequência" é subtraído -1.
+        fim para.
+
+
+        posicao = posicao * 10
+
+    fim enquanto.
+
+fim
+
+
+
+"abrevia-se a vida para fazer dinheiro mais rápido"
