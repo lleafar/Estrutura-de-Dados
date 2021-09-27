@@ -1,4 +1,6 @@
 import tad.ListaDuplamenteEncadeada.ListaDuplamenteEncadeada;
+import tad.BinaryTree.*;
+
 import utils.Popular;
 import utils.Testes;
 
