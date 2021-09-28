@@ -32,12 +32,16 @@ public class Main {
         fim = System.nanoTime();
         insert_time_lde = fim - inicio;
 
-
         //Apresentar
         inicio = System.nanoTime();
-        Testes.print(Testes.ordenar(listaDuplamenteEncadeada));
+        ListaDuplamenteEncadeada<Map<Integer, String>> lde = new ListaDuplamenteEncadeada<>();
+        lde = Testes.ordenar(listaDuplamenteEncadeada);
+        Testes.print(lde);
         fim = System.nanoTime();
         show_time_lde = fim - inicio;
+
+
+        System.out.println("print concluído!");
 
         //Pesquisar
         inicio = System.nanoTime();
@@ -45,13 +49,13 @@ public class Main {
         fim = System.nanoTime();
         search_time_lde = fim - inicio;
 
-
+        System.out.println("pesquisa concluída");
         //Remover
         inicio = System.nanoTime();
         Testes.remover(listaDuplamenteEncadeada, matricula);
         fim = System.nanoTime();
         remove_time_lde = fim - inicio;
-
+        
         //Tempo de execução
         System.out.println("----------------------------------");
         System.out.println("Lista duplamente encadeada");
