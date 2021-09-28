@@ -33,6 +33,7 @@ public class Main {
 
         //Apresentar
         inicio = System.nanoTime();
+        Testes.print(Testes.ordenar(listaDuplamenteEncadeada));
         fim = System.nanoTime();
         show_time_lde = fim - inicio;
 
@@ -44,20 +45,18 @@ public class Main {
 
 
         //Remover
-        System.out.println(listaDuplamenteEncadeada.size());
         inicio = System.nanoTime();
         Testes.remover(listaDuplamenteEncadeada, matricula);
         fim = System.nanoTime();
         remove_time_lde = fim - inicio;
-        System.out.println(listaDuplamenteEncadeada.size());
 
         //Tempo de execução
         System.out.println("----------------------------------");
         System.out.println("Lista duplamente encadeada");
-        System.out.println("Inserção:  " + insert_time_lde);
-        System.out.println("Pesquisa:  " + search_time_lde);
-        System.out.println("Remover:   " + remove_time_lde);
-        System.out.println("Apresenta: " + show_time_lde);
+        System.out.println("Inserir:    " + insert_time_lde);
+        System.out.println("Pesquisar:  " + search_time_lde);
+        System.out.println("Remover:    " + remove_time_lde);
+        System.out.println("Apresentar: " + show_time_lde);
         System.out.println("----------------------------------");
 
     }

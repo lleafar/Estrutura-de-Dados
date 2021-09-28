@@ -9,7 +9,7 @@ public class Popular {
 
     private Estudante estudante;
     private Map<Integer,String> map_estudante;
-    private final int total_alunos = 10000;
+    private final int total_alunos = 100000;
 
 
     public ListaDuplamenteEncadeada<Map<Integer, String>> getLDE(){
