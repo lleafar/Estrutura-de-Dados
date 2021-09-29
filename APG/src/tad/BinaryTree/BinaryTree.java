@@ -1,5 +1,11 @@
 package tad.BinaryTree;
 
+import utils.Estudante;
+
+/**
+ * Créditos: baeldung.com
+ */
+
 public class BinaryTree {
     TreeNode root;
 
@@ -28,7 +34,26 @@ public class BinaryTree {
         }
 
         if (v == c.v) {
+            // sem nós filhos
+            if (c.left == null && c.right == null) {
+                return null;
+            }
 
+            // um nó filho na esquerda
+            if (c.right == null) {
+                return c.left;
+            }
+            
+            // um nó filho na direita
+            if (c.left == null) {
+                return c.right;
+            }
+
+            // dois nós filhos
+            int smallestValue = findSmallestValue(c.right);
+            c.v = smallestValue;
+            c.right = deleteRec(c.right, smallestValue);
+            return c;
         }
 
         if (v < c.v) {
@@ -47,19 +72,13 @@ public class BinaryTree {
     public void traverseInOrder(TreeNode tn) {
         if (tn != null) {
             traverseInOrder(tn.left);
-            //printar
+            //printar?
             traverseInOrder(tn.right);
         }
     }
 
-    // criar árvore binária e adicionar os valores (exemplo)
-    // private BinaryTree createBinaryTree() {
-    //     BinaryTree b = new BinaryTree();
+    private int findSmallestValue(TreeNode root) {
+        return root.left == null ? root.v : findSmallestValue(root.left);
+    }
 
-    //     b.add(4);
-    //     b.add(5);
-    //     b.add(3);
-
-    //     return b;
-    // }
 }

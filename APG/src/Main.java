@@ -3,6 +3,7 @@ import tad.BinaryTree.*;
 
 import utils.Popular;
 import utils.Testes;
+import utils.Estudante;
 
 import java.util.*;
 
@@ -65,7 +66,32 @@ public class Main {
         System.out.println("Apresentar: " + show_time_lde);
         System.out.println("----------------------------------");
 
-    }
+        
+
+        // add 100k na árvore binária
+        BinaryTree b = new BinaryTree();
+        Estudante e = new Estudante(); // gera o Estudante root (todos os outros são instanciados em TreeNode)
+        
+        inicio = System.nanoTime();
+        
+        for (int i=0; i<100000; i++) {
+            b.add(e.getMatricula());
+        }
+
+        fim = System.nanoTime();
+
+        long insert_time_bt = fim - inicio;
+
+        //Tempo de execução
+        System.out.println("----------------------------------");
+        System.out.println("Arvore binária");
+        System.out.println("Inserir:    " + insert_time_bt);
+        System.out.println("Pesquisar:  ");
+        System.out.println("Remover:    ");
+        System.out.println("Apresentar: ");
+        System.out.println("----------------------------------");
+
+        }
 
 
 }
