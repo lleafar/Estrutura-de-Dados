@@ -7,7 +7,7 @@ import utils.Estudante;
  */
 
 public class BinaryTree {
-    TreeNode root;
+    public TreeNode root;
 
     private TreeNode addRec(TreeNode c, int v) {
         if (c == null) {
@@ -69,12 +69,18 @@ public class BinaryTree {
         root = deleteRec(root, v);
     }
 
+    // pesquisa in-order
+    public int estudantesES;
     public void traverseInOrder(TreeNode tn) {
+        tn = root;
         if (tn != null) {
             traverseInOrder(tn.left);
-            //printar?
+            if (tn.getEstudante().isCursoES()) {
+                estudantesES++;
+            }
             traverseInOrder(tn.right);
         }
+        System.out.println(estudantesES);
     }
 
     private int findSmallestValue(TreeNode root) {

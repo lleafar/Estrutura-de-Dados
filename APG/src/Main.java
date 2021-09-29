@@ -82,13 +82,22 @@ public class Main {
 
         long insert_time_bt = fim - inicio;
 
+        // apresenta número estudantes ES
+        inicio = System.nanoTime();
+        
+        b.traverseInOrder(b.root);
+
+        fim = System.nanoTime();
+
+        long show_time_bt = fim - inicio;
+
         //Tempo de execução
         System.out.println("----------------------------------");
         System.out.println("Arvore binária");
         System.out.println("Inserir:    " + insert_time_bt);
         System.out.println("Pesquisar:  ");
         System.out.println("Remover:    ");
-        System.out.println("Apresentar: ");
+        System.out.println("Apresentar: " + show_time_bt);
         System.out.println("----------------------------------");
 
         }
