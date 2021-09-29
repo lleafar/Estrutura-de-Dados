@@ -5,16 +5,18 @@ import utils.Estudante;
 
         private Estudante[] estudantes = new Estudante[100000];
 
-        //guarda a quantidade de alunos existentes 
-        private int totalDeEstudantes = 0;
+        private int totalDeEstudantes  = 0;
+
 
         public void adiciona(Estudante estudante){
-            for(int i=0; i<this.estudantes.length; i++){
+            for(int i = 0; i < this.estudantes.length; i++){
                 this.estudantes[this.totalDeEstudantes] = estudante;
                 this.totalDeEstudantes++;
-                System.out.println(this.estudantes[i]);
             }
-            
+        }
+
+        public void apresentaEstudantes(){
+            System.out.println(this.estudantes);
         }
 
 
@@ -22,20 +24,6 @@ import utils.Estudante;
             return posicao >= 0 && posicao < this.totalDeEstudantes;
         }
 
-
-        public void removeMatricula(int posicao) {
-            if (!this.posicaoOcupada(posicao)) {
-                throw new IllegalArgumentException("Posicao inválida");
-            }
-
-            for (int i = posicao; i < this.totalDeEstudantes - 1; i++) {
-                if(estudantes[i].getMatricula() <= 202060000){
-                    this.estudantes[i] = this.estudantes[i + 1];
-                }
-                    this.totalDeEstudantes--;
-                    System.out.println(estudantes);
-            }
-        }
 
         public void estudantesES(int posicao){
             int quantidade = 0;
@@ -49,9 +37,17 @@ import utils.Estudante;
         }
 
 
-        public int tamanho(){
-            return this.totalDeEstudantes;
-        }
-    
+        public void removeMatricula(int posicao) {
+            if (!this.posicaoOcupada(posicao)) {
+                throw new IllegalArgumentException("Posicao inválida");
+            }
 
+            for (int i = posicao; i < this.totalDeEstudantes - 1; i++) {
+                if(estudantes[i].getMatricula() <= 202060000){
+                    this.estudantes[i] = this.estudantes[i + 1];
+                }
+                    this.totalDeEstudantes--;
+                    System.out.println(this.estudantes[i]);
+            }
+        }
     }
